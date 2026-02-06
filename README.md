@@ -1,4 +1,4 @@
-# DeepHAR: Multi-Horizon Heterogeneous Attentive Regression Network for Explainable Volatility Forecasting
+# DeepHAR: Heterogeneous Attention-Conditioned Regression Network for Interpretable Realized Volatility Forecasting
 
 This repository contains the official PyTorch implementation of **DeepHAR**, a novel deep learning framework for explainable financial volatility forecasting. 
 
