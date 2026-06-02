@@ -1,4 +1,4 @@
-# DeepHAR: Heterogeneous Attention-Conditioned Regression Network for Interpretable Realized Volatility Forecasting
+# DeepHAR: Heterogeneous Attention-Conditioned Regression Network for Realized Volatility Forecasting
 
 This repository contains the official PyTorch implementation of **DeepHAR**, a novel deep learning framework for explainable financial volatility forecasting. 
 
@@ -10,7 +10,7 @@ This repository contains the official PyTorch implementation of **DeepHAR**, a n
 * **Temporal Attention Pooling**: Utilizes an attention mechanism to distill pivotal time points from multi-timescale data, generating representative vectors for each horizon.
 * **Heterogeneous Cross-Attention**: Learns structural representations by referencing historical contexts (Key/Value) conditioned on the current market state (Query).
 * **Dual-Path Decomposition**: Explicitly models complex market dynamics by disentangling the integrated information into distinct **Trend** and **Shock** paths.
-* **Explainability (XAI)**: Provides intrinsic interpretability by exposing attention weights through the `forward_attention` method, enabling the analysis of cross-horizon dependencies.
+* **Explainability (XAI)**: Provides intrinsic explainability by exposing attention weights through the `forward_attention` method, enabling the analysis of cross-horizon dependencies.
 * **Numerical Stability**: Implements Shifted ReLU ($ReLU(x) + \epsilon$) to ensure strictly positive outputs, preventing numerical instability and ensuring the mathematical validity of the **QLIKE loss** computation.
 
 ---
