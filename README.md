@@ -123,12 +123,5 @@ python test.py \
 ```
 
 
-Anonymous GitHub & Double-Blind Policy
-This repository is a de-identified version of the original source code prepared for double-blind peer review.
-
-* All author names and affiliations have been removed.
-* Commit history and contributor profiles have been sanitized.
-* The code is fully functional for reproducing the experiments.
-
 ### License
 For review purposes only. Full license information will be provided upon publication.
