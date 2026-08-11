@@ -66,7 +66,7 @@ To reconstruct the complete dataset used in the paper, run the acquisition and p
 ```bash
 python run_dataset.py --api_key YOUR_API_KEY
 ```
-This crawls the raw intraday data (SPY, DIA, QQQ, 2005-01 to 2025-12), cleans it, builds the daily HAR features, and constructs the train/validation/test splits described in Appendix B.1–B.2. If the raw CSVs already exist locally, add `--skip_crawl` to skip re-downloading.
+This crawls the raw intraday data (SPY, DIA, QQQ, 2005-01 to 2025-12), cleans it, builds the daily HAR features, and constructs the train/validation/test splits described in Appendix B.1. If the raw CSVs already exist locally, add `--skip_crawl` to skip re-downloading.
 
 
 ```
