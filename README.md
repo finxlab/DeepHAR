@@ -61,6 +61,13 @@ Due to licensing restrictions and data privacy policies, we provide a **sampled 
 - These samples are provided to verify the **technical functionality** and **reproducibility** of the code pipeline.
 - For the full experimental results reported in the paper, the complete proprietary dataset was used.
 
+**Reproducing the full dataset from raw data:**
+To reconstruct the complete dataset used in the paper, run the acquisition and preprocessing pipeline with your own Alpha Vantage API key:
+```bash
+python run_dataset.py --api_key YOUR_API_KEY
+```
+This crawls the raw intraday data (SPY, DIA, QQQ, 2005-01 to 2025-12), cleans it, builds the daily HAR features, and constructs the train/validation/test splits described in Appendix B.1–B.2. If the raw CSVs already exist locally, add `--skip_crawl` to skip re-downloading.
+
 
 ```
 dataset/all/
