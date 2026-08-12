@@ -18,15 +18,17 @@ This repository contains the official PyTorch implementation of **DeepHAR**, a n
 ## 📂 Project Structure
 | File/Folder | Description |
 | :--- | :--- |
+| `analysis/` | Result analysis (plots, tables) |
 | `dataset/all/` | Data directory containing `.npy` files |
 | `lib/Model.py` | Model architectures (DeepHAR, LSTM, BILSTM, GRU) |
 | `lib/modules.py` | Core utilities |
-| `lib/datasetLoader.py` | data loading |
+| `lib/datasetLoader.py` | Data loading |
+| `lib/dataset_module.py` | Dataset construction utilities |
 | `lib/Metric.py` | Standard volatility metrics (QLIKE, MSE) |
-| `train.py` | Training logic and validation loops |
-| `run.py` | Main entry point for training the model |
+| `run.py` | Main entry point for training the model (includes training/validation logic) |
+| `run_dataset.py` | Script for building the dataset |
 | `test.py` | Script for inference |
-
+| `train.py` | Training logic and validation loops |
 
 ---
 
@@ -128,7 +130,25 @@ python test.py \
   "MSE": 0.XXXX
 }
 ```
+#### 5) Analysis
+The `analysis/` folder contains notebooks that reproduce the paper's tables and figures. Each notebook reads per-model / per-seed prediction files that must be placed under `./result/` (see Quick start below) and writes the corresponding tables and figures back into `./result/`, named after the paper's own table/figure numbers.
 
+**How to generate results**:
+1. Load the trained checkpoint (`checkpoint.pth`) for the setting you want to analyze.
+2. Run inference on the test set.
+3. Save the outputs as `.npy` files into the matching `./result/` subfolder (`pred/`, `xai/`, `sensitivity/`, or `ablation/`, depending on which notebook you plan to run).
+
+**Quick start**: `analysis/result/ablation_source.zip` bundles all the required inputs (`pred/`, `sensitivity/`, `xai/`, `ablation/`). Unzip it inside `analysis/result/` and every notebook below can be run out of the box.
+
+| Notebook | Reproduces | Reads from |
+| :--- | :--- | :--- |
+| `performance_analysis.ipynb` | Table 1 (overall forecasting performance), Table 3 (performance under market stress), Table 5 (portfolio utility gains), Figure 7 (robustness across volatility quantiles) | `./result/pred`, `./result/date.npy` |
+| `dm_test_tables.ipynb` | Table 2 (win-tie-loss summary), Table 8/9 (Diebold-Mariano test), Table 10/11 (HAC-robust DM test) | `./result/pred` |
+| `ablation_analysis.ipynb` | Table 4 (ablation study), Table 12 (look-back window robustness) | `./result/ablation` |
+| `attention_analysis.ipynb` | Figure 4/5 (mid-/long-term attention profiles by regime), Figure 6 (regime-dependent horizon-selection weights) | `./result/xai` |
+| `sensitivity_analysis.ipynb` | Figure 3 (hyperparameter sensitivity: learning rate, hidden dimension, number of heads) | `./result/sensitivity` |
+
+All outputs (CSV tables, PNG/PDF figures) are saved under `analysis/result/`.
 
 ### License
 For review purposes only. Full license information will be provided upon publication.
