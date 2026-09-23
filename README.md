@@ -150,5 +150,22 @@ The `analysis/` folder contains notebooks that reproduce the paper's tables and 
 
 All outputs (CSV tables, PNG/PDF figures) are saved under `analysis/result/`.
 
-### License
-For review purposes only. Full license information will be provided upon publication.
+## 📄 Citation
+
+This repository contains the official implementation of **DeepHAR**, published in *Finance Research Letters* (2026).
+If you find this code useful for your research, please cite our paper:
+
+> Jungyoon Song, Jae Wook Song. **DeepHAR: Heterogeneous attention-conditioned regression network for realized volatility forecasting.** *Finance Research Letters*, 2026, 110783. ISSN 1544-6123. [https://doi.org/10.1016/j.frl.2026.110783](https://doi.org/10.1016/j.frl.2026.110783)
+
+```bibtex
+@article{song2026deephar,
+  title    = {DeepHAR: Heterogeneous attention-conditioned regression network for realized volatility forecasting},
+  author   = {Song, Jungyoon and Song, Jae Wook},
+  journal  = {Finance Research Letters},
+  pages    = {110783},
+  year     = {2026},
+  issn     = {1544-6123},
+  doi      = {10.1016/j.frl.2026.110783},
+  url      = {https://www.sciencedirect.com/science/article/pii/S1544612326013115}
+}
+```
