@@ -159,13 +159,11 @@ If you find this code useful for your research, please cite our paper:
 
 ```bibtex
 @article{song2026deephar,
-  title    = {DeepHAR: Heterogeneous attention-conditioned regression network for realized volatility forecasting},
-  author   = {Song, Jungyoon and Song, Jae Wook},
-  journal  = {Finance Research Letters},
-  pages    = {110783},
-  year     = {2026},
-  issn     = {1544-6123},
-  doi      = {10.1016/j.frl.2026.110783},
-  url      = {https://www.sciencedirect.com/science/article/pii/S1544612326013115}
+  title={DeepHAR: Heterogeneous attention-conditioned regression network for realized volatility forecasting},
+  author={Song, Jungyoon and Song, Jae Wook},
+  journal={Finance Research Letters},
+  pages={110783},
+  year={2026},
+  publisher={Elsevier}
 }
 ```
